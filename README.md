@@ -1,47 +1,103 @@
-# SimpleHttpServer
-A minimal HTTP server built using Java's built-in com.sun.net.httpserver package. This simple server listens on port 8080 and responds with a plain text message for every request.
-SimpleHttpServer (Java)
-A minimal HTTP server built using Java's built-in com.sun.net.httpserver package.
-This simple server listens on port 8080 and responds with a plain text message for every request.
+# SimpleHttpServer (Java)
 
-🚀 Features
-Lightweight and dependency-free
-Uses Java’s built-in HttpServer
-Responds to all requests on /
-Great for learning how HTTP servers work in Java
+A minimal HTTP server built using Java's built-in `com.sun.net.httpserver` package.
+This simple server listens on **port 8080** and returns a plain text message for any request.
 
-📦 Requirements
-Java 8 or above
-A terminal or IDE (IntelliJ, Eclipse, VS Code, etc.)
+---
 
-🛠️ How to Run
-Clone the repository
+## 🚀 Features
+
+* Lightweight and dependency-free
+* Uses Java’s built-in `HttpServer`
+* Responds to all requests on `/`
+* Great for beginners learning server-side Java
+
+---
+
+## 📦 Requirements
+
+* **Java 8+**
+* A terminal or Java-compatible IDE
+
+---
+
+## 🛠️ How to Run
+
+### 1. Clone the repository
+
+```sh
 git clone https://github.com/your-username/SimpleHttpServer.git
 cd SimpleHttpServer
+```
 
-Compile the Java file
+### 2. Compile the program
+
+```sh
 javac SimpleHttpServer.java
+```
 
-Run the server
+### 3. Run the server
+
+```sh
 java SimpleHttpServer
+```
 
-Open your browser and visit:
+### 4. Open in browser
+
+Visit:
+
+```
 http://localhost:8080
+```
 
 You should see:
-Simple http server
 
-📁 Project Structure
+```
+Simple http server
+```
+
+---
+
+## 📁 Project Structure
+
+```
 SimpleHttpServer/
 │
 ├── SimpleHttpServer.java
 └── README.md
+```
 
+---
 
+## 🧩 How It Works
 
-📝 Future Improvements
+### Create the server:
 
-Add routing for different paths
-Support JSON responses
-Add logging
-Add multithreaded executor
+```java
+HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
+```
+
+### Register the handler:
+
+```java
+server.createContext("/", new MyHandler());
+```
+
+### Send a response:
+
+```java
+exchange.sendResponseHeaders(200, response.length());
+os.write(response.getBytes());
+```
+
+---
+
+## 📝 Possible Improvements
+
+* Add routing for multiple endpoints
+* Return JSON responses
+* Add logging
+* Add executor for multithreading
+* Improve error handling
+
+---
