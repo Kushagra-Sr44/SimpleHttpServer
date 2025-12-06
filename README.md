@@ -26,7 +26,7 @@ This simple server listens on **port 8080** and returns a plain text message for
 ### 1. Clone the repository
 
 ```sh
-git clone https://github.com/your-username/SimpleHttpServer.git
+git clone https://github.com/Kushagra-Sr44/SimpleHttpServer.git
 cd SimpleHttpServer
 ```
 
